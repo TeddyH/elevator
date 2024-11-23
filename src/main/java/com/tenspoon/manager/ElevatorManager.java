@@ -31,7 +31,8 @@ public class ElevatorManager {
         elevators.clear();
 
         for (int i = 1; i <= n; i++) {
-            int randomLocation = random.nextInt(111);
+            // 1부터 100까지 랜덤 위치 생성
+            int randomLocation = random.nextInt(100) + 1;
             elevators.put(i, new Elevator(randomLocation));
         }
 
@@ -114,6 +115,13 @@ public class ElevatorManager {
     private void moveElevators() {
         for (Elevator elevator : elevators.values()) {
             if (!elevator.getTargetLocation().isEmpty()) {
+                // 현재 이동 방향에 따라 목적지 리스트 정렬
+                if (elevator.getMoving() >= 0) { // 올라가는 경우
+                    elevator.getTargetLocation().sort(Integer::compareTo);
+                } else { // 내려가는 경우
+                    elevator.getTargetLocation().sort((a, b) -> b - a);
+                }
+
                 int nextTarget = elevator.getTargetLocation().get(0);
                 int currentLocation = elevator.getCurrentLocation();
 

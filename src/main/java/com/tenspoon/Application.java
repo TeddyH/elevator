@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-		int elevatorCount = 6;
+		int elevatorCount = 3;
 
 		SpringApplication.run(Application.class, args);
 

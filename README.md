@@ -38,15 +38,58 @@
 60층에 살고 있는 사용자가 엘리베이터를 누름
 POST http://localhost:8080/elevator/call?floor=60
 #### 실행 로그
+15층 -> 22층 -> 70층
 ```
 Elevators initialized.
-Elevator Status: #1(27, 0, []) #2(10, 0, []) #3(92, 0, []) #4(17, 0, []) #5(86, 0, []) #6(65, 0, [])
-(!) Elevator called at floor 60.
-Selected Elevator: #6
-Elevator Status: #1(27, 0, []) #2(10, 0, []) #3(92, 0, []) #4(17, 0, []) #5(86, 0, []) #6(64, -1, [60])
-Elevator Status: #1(27, 0, []) #2(10, 0, []) #3(92, 0, []) #4(17, 0, []) #5(86, 0, []) #6(63, -1, [60])
-Elevator Status: #1(27, 0, []) #2(10, 0, []) #3(92, 0, []) #4(17, 0, []) #5(86, 0, []) #6(62, -1, [60])
-Elevator Status: #1(27, 0, []) #2(10, 0, []) #3(92, 0, []) #4(17, 0, []) #5(86, 0, []) #6(61, -1, [60])
-Elevator Status: #1(27, 0, []) #2(10, 0, []) #3(92, 0, []) #4(17, 0, []) #5(86, 0, []) #6(60, -1, [60])
-Elevator Status: #1(27, 0, []) #2(10, 0, []) #3(92, 0, []) #4(17, 0, []) #5(86, 0, []) #6(60, 0, [])
+Elevator Status: #1(54, 0, []) #2(60, 0, []) #3(96, 0, [])
+2024-11-23 10:18:58.228  INFO 26076 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-23 10:18:58.228  INFO 26076 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-23 10:18:58.229  INFO 26076 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+(!) Elevator called at floor 15.
+Selected Elevator: #1
+Elevator Status: #1(53, -1, [15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(52, -1, [15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(51, -1, [15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(50, -1, [15]) #2(60, 0, []) #3(96, 0, [])
+(!) Elevator called at floor 22.
+Selected Elevator: #1
+Elevator Status: #1(49, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(48, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(47, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(46, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(45, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(44, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(43, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(42, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+Elevator Status: #1(41, -1, [22, 15]) #2(60, 0, []) #3(96, 0, [])
+(!) Elevator called at floor 70.
+Selected Elevator: #2
+Elevator Status: #1(40, -1, [22, 15]) #2(61, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(39, -1, [22, 15]) #2(62, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(38, -1, [22, 15]) #2(63, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(37, -1, [22, 15]) #2(64, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(36, -1, [22, 15]) #2(65, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(35, -1, [22, 15]) #2(66, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(34, -1, [22, 15]) #2(67, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(33, -1, [22, 15]) #2(68, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(32, -1, [22, 15]) #2(69, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(31, -1, [22, 15]) #2(70, 1, [70]) #3(96, 0, [])
+Elevator Status: #1(30, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(29, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(28, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(27, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(26, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(25, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(24, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(23, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(22, -1, [22, 15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(22, 0, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(21, -1, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(20, -1, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(19, -1, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(18, -1, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(17, -1, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(16, -1, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(15, -1, [15]) #2(70, 0, []) #3(96, 0, [])
+Elevator Status: #1(15, 0, []) #2(70, 0, []) #3(96, 0, [])
 ```
