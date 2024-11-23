@@ -134,6 +134,7 @@ public class ElevatorManager {
                 } else {
                     elevator.setMoving(0); // 도착
                     elevator.getTargetLocation().remove(0); // 목표 제거
+                    System.out.println("Elevator arrived at floor " + elevator.getCurrentLocation() + ".");
                 }
             }
         }
