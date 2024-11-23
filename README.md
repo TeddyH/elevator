@@ -35,8 +35,9 @@
 
 ### 테스트
 #### 호출
-60층에 살고 있는 사용자가 엘리베이터를 누름
-POST http://localhost:8080/elevator/call?floor=60
+- 60층에 살고 있는 사용자가 엘리베이터를 누름
+- POST: http://localhost:8080/elevator/call?floor=60
+- Rsponse: 성공(200), 파라미터 오류(400), 서버 실패(500)
 #### 실행 로그
 97층 -> 91층 -> 40층
 ```
