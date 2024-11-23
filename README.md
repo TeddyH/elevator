@@ -42,9 +42,6 @@ POST http://localhost:8080/elevator/call?floor=60
 ```
 Elevators initialized.
 Elevator Status: #1(54, 0, []) #2(60, 0, []) #3(96, 0, [])
-2024-11-23 10:18:58.228  INFO 26076 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-23 10:18:58.228  INFO 26076 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-23 10:18:58.229  INFO 26076 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 (!) Elevator called at floor 15.
 Selected Elevator: #1
 Elevator Status: #1(53, -1, [15]) #2(60, 0, []) #3(96, 0, [])
