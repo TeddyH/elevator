@@ -38,45 +38,48 @@
 60층에 살고 있는 사용자가 엘리베이터를 누름
 POST http://localhost:8080/elevator/call?floor=60
 #### 실행 로그
-80층 -> 72층 -> 15층
+97층 -> 91층 -> 40층
 ```
-Elevators initialized.
-Elevator Status: #1(55, 0, []) #2(26, 0, []) #3(51, 0, [])
-(!) Elevator called at floor 80.
-Selected Elevator: #1
-Elevator Status: #1(56, 1, [80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(57, 1, [80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(58, 1, [80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(59, 1, [80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(60, 1, [80]) #2(26, 0, []) #3(51, 0, [])
-(!) Elevator called at floor 72.
-Selected Elevator: #1
-Elevator Status: #1(61, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(62, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(63, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(64, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(65, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(66, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(67, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-Elevator Status: #1(68, 1, [72, 80]) #2(26, 0, []) #3(51, 0, [])
-(!) Elevator called at floor 15.
-Selected Elevator: #2
-Elevator Status: #1(69, 1, [72, 80]) #2(25, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(70, 1, [72, 80]) #2(24, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(71, 1, [72, 80]) #2(23, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(72, 1, [72, 80]) #2(22, -1, [15]) #3(51, 0, [])
-Elevator arrived at floor 72.
-Elevator Status: #1(72, 0, [80]) #2(21, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(73, 1, [80]) #2(20, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(74, 1, [80]) #2(19, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(75, 1, [80]) #2(18, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(76, 1, [80]) #2(17, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(77, 1, [80]) #2(16, -1, [15]) #3(51, 0, [])
-Elevator Status: #1(78, 1, [80]) #2(15, -1, [15]) #3(51, 0, [])
-Elevator arrived at floor 15.
-Elevator Status: #1(79, 1, [80]) #2(15, 0, []) #3(51, 0, [])
-Elevator Status: #1(80, 1, [80]) #2(15, 0, []) #3(51, 0, [])
-Elevator arrived at floor 80.
-Elevator Status: #1(80, 0, []) #2(15, 0, []) #3(51, 0, [])
-Elevator Status: #1(80, 0, []) #2(15, 0, []) #3(51, 0, [])
+Elevators initialized with Redis.
+Elevator Status: #1(80, 0, []) #2(12, 0, []) #3(50, 0, [])
+(!) Elevator called at floor 97.
+(!) Elevator Selected: #1
+Elevator Status: #1(81, 1, [97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(82, 1, [97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(83, 1, [97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(84, 1, [97]) #2(12, 0, []) #3(50, 0, [])
+(!) Elevator called at floor 91.
+(!) Elevator Selected: #1
+Elevator Status: #1(85, 1, [91, 97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(86, 1, [91, 97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(87, 1, [91, 97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(88, 1, [91, 97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(89, 1, [91, 97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(90, 1, [91, 97]) #2(12, 0, []) #3(50, 0, [])
+Elevator Status: #1(91, 1, [91, 97]) #2(12, 0, []) #3(50, 0, [])
+(!) Elevator called at floor 40.
+(!) Elevator Selected: #3
+Elevator Status: #1(91, 1, [91, 97]) #2(12, 0, []) #3(49, -1, [40])
+(!) Elevator #1 arrived at floor 91.
+Elevator Status: #1(91, 0, [97]) #2(12, 0, []) #3(49, -1, [40])
+Elevator Status: #1(92, 1, [97]) #2(12, 0, []) #3(49, -1, [40])
+Elevator Status: #1(92, 1, [97]) #2(12, 0, []) #3(48, -1, [40])
+Elevator Status: #1(93, 1, [97]) #2(12, 0, []) #3(48, -1, [40])
+Elevator Status: #1(94, 1, [97]) #2(12, 0, []) #3(48, -1, [40])
+Elevator Status: #1(94, 1, [97]) #2(12, 0, []) #3(47, -1, [40])
+Elevator Status: #1(95, 1, [97]) #2(12, 0, []) #3(47, -1, [40])
+Elevator Status: #1(96, 1, [97]) #2(12, 0, []) #3(47, -1, [40])
+Elevator Status: #1(96, 1, [97]) #2(12, 0, []) #3(46, -1, [40])
+Elevator Status: #1(97, 1, [97]) #2(12, 0, []) #3(46, -1, [40])
+(!) Elevator #1 arrived at floor 97.
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(46, -1, [40])
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(45, -1, [40])
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(45, -1, [40])
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(44, -1, [40])
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(43, -1, [40])
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(42, -1, [40])
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(41, -1, [40])
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(40, -1, [40])
+(!) Elevator #3 arrived at floor 40.
+Elevator Status: #1(97, 0, []) #2(12, 0, []) #3(40, 0, [])
 ```
