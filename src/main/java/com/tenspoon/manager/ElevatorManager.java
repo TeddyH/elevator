@@ -5,6 +5,7 @@ import com.tenspoon.model.Elevator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -13,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 @Component
 public class ElevatorManager {
-    private Map<Integer, Elevator> elevators;
+private Map<Integer, Elevator> elevators;
+private Map<Integer, ScheduledExecutorService> schedulerMap = new HashMap<>();
 
     @Autowired
     private ElevatorState elevatorState;
@@ -75,22 +77,27 @@ public class ElevatorManager {
         // 목적지 정렬 (현재 위치 기준으로 가까운 순서대로)
         sortTargetFromNearestFloor(selectedElevator);
 
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(() -> {
-            moveElevator(selectedElevatorId);
-            printElevatorsStatus();
+ScheduledExecutorService scheduler = schedulerMap.get(selectedElevatorId);
+if (scheduler == null || scheduler.isShutdown()) {
+    scheduler = Executors.newScheduledThreadPool(1);
+    schedulerMap.put(selectedElevatorId, scheduler);
+    final ScheduledExecutorService finalScheduler = scheduler;
+    scheduler.scheduleAtFixedRate(() -> {
+        moveElevator(selectedElevatorId);
+        printElevatorsStatus();
 
-            if (selectedElevator.getTargetLocation().isEmpty()) {
-                selectedElevator.setMoving(0); // 정지 상태로 전환
-                scheduler.shutdown();
-            }
-        }, 0, 1, TimeUnit.SECONDS);
+        if (selectedElevator.getTargetLocation().isEmpty()) {
+            selectedElevator.setMoving(0); // 정지 상태로 전환
+            finalScheduler.shutdown();
+        }
+    }, 0, 1, TimeUnit.SECONDS);
+}
     }
 
     private void moveElevator(int elevatorId) {
         Elevator elevator = elevators.get(elevatorId);
         if (!elevator.getTargetLocation().isEmpty()) {
-            int nextTarget = elevator.getTargetLocation().get(0);
+            int nextTarget = elevator.getTargetLocation().getFirst();
             int currentLocation = elevator.getCurrentLocation();
 
             if (currentLocation < nextTarget) {
@@ -128,7 +135,7 @@ public class ElevatorManager {
 
     private void sortTargetFromNearestFloor(Elevator elevator) {
         int currentLocation = elevator.getCurrentLocation();
-        elevator.getTargetLocation().sort((a, b) -> Integer.compare(Math.abs(a - currentLocation), Math.abs(b - currentLocation)));
+        elevator.getTargetLocation().sort(Comparator.comparingInt(a -> Math.abs(a - currentLocation)));
     }
 
 }
