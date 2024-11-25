@@ -97,7 +97,10 @@ if (scheduler == null || scheduler.isShutdown()) {
     private void moveElevator(int elevatorId) {
         Elevator elevator = elevators.get(elevatorId);
         if (!elevator.getTargetLocation().isEmpty()) {
-            int nextTarget = elevator.getTargetLocation().getFirst();
+            // java 11
+            int nextTarget = elevator.getTargetLocation().get(0);
+            // java 21
+//            int nextTarget = elevator.getTargetLocation().getFirst();
             int currentLocation = elevator.getCurrentLocation();
 
             if (currentLocation < nextTarget) {
